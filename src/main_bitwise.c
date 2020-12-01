@@ -11,7 +11,7 @@ int
 main(int argc, char **argv){
 
     int c, *longindex = 0;
-    const char *optstring = "u:l"
+    const char *optstring = "u:l";
 
     while ((c = getopt_long(argc, argv, optstring, long_option, &optind)) != -1){
         switch (expression)
@@ -20,7 +20,7 @@ main(int argc, char **argv){
             toupper_f();
             break;
         case 'l':
-            break
+            break;
         case 'h':
             usage(EXIT_SUCCESS);
         default:
