@@ -4,6 +4,6 @@
  */
 #include <stdlib.h>
 
-extern void toupper_f(char word );
-extern void tolower_f(char word );
+extern char *toupper_f(unsigned char *word );
+extern char *tolower_f(unsigned char *word );
 extern void usage(int status);
