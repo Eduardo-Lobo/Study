@@ -1,0 +1,19 @@
+
+
+
+AC_INIT([bitwise], [0.1])
+AC_CONFIG_SRCDIR([src/main_bitwise.c])
+AM_INIT_AUTOMAKE
+
+dnl Checks for programs.
+AC_CANONICAL_HOST
+AC_PROG_AWK
+AC_PROG_INSTALL
+AC_PROG_CC
+AC_PROG_RANLIB
+
+AC_CONFIG_FILES([
+  Makefile
+  src/Makefile
+])
+AC_OUTPUT
