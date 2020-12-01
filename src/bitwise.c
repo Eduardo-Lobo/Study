@@ -4,47 +4,46 @@
  */
 #include <stdint.h>
 #include <stdio.h>
-#include <getopt.h>
 #include "bitwise.h"
-
-const struct option long_option[]=
-{
-  {"toupper", required_argument, NULL, 'u'},
-  {"tolower", required_argument, NULL, 'l'},
-  {"help",    no_argument,       NULL, 'h'},
-  {0,         0,                 0,      0},
-};
-
 
 void
 usage(int status){
-  if (status && EXIT_FAILURE){
-    fputc(
+  if (status){
+    fputs(
       "Usage:\n\
       bitwise [ --l ] [ word ]\n\
       bitwise [ --u ] [ word ]", stdout);
   }else{
-    fputc(
+    fputs(
       "Usage:\n\
       bitwise [ --l ] [ word ]\n\
       bitwise [ --u ] [ word ]\n", stdout);
-    fputc(
+    fputs(
       "Options:\n\
       -l, --tolower     Invert of lowercase for upercase\n\
       -u, --toupper     Invert of upercase for lowercase\n\
-      -h, --help        Show this help message", stdout);
+      -h, --help        Show this help message\n", stdout);
   }
 };
 
 
-void
-toupper_f(char word){
+char
+*toupper_f(unsigned char *word){
 
-  unsigned char c = word[0];
-  uint16_t mask = 0x00100000;
+    const int x = 32;
 
-  if !(c[2]){
-    word[0] = c | mask;
-    printf("Lowercase is: %s", word);
-  }
+    for (int i=0; word[i]!='\0'; i++){
+        word[i] = word[i] & ~x;
+    }
+    return word;
 };
+
+// Example:
+// w 01110111 o 01101111 r 01110010 d 01100100
+//   11011111   11011111   11011111   11011111
+//   ----------------------------------------- AND
+//   01010111   01001111   01010010   01000100
+
+// 32 00100000 
+//    -------- ~
+//    11011111
