@@ -5,11 +5,33 @@
 #include <stdint.h>
 #include <stdio.h>
 #include <getopt.h>
+#include "bitwise.h"
 
 const struct option long_option[]=
 {
   {"toupper", required_argument, NULL, 'u'},
   {"tolower", required_argument, NULL, 'l'},
+};
+
+
+void
+usage(int status){
+  if (status && EXIT_FAILURE){
+    fputc(
+      "Usage:\n\
+      bitwise [ --l ] [ word ]\n\
+      bitwise [ --u ] [ word ]", stdout);
+  }else{
+    fputc(
+      "Usage:\n\
+      bitwise [ --l ] [ word ]\n\
+      bitwise [ --u ] [ word ]\n", stdout);
+    fputc(
+      "Options:\n\
+      -l, --tolower     Invert of lowercase for upercase\n\
+      -u, --toupper     Invert of upercase for lowercase\n\
+      -h, --help        Show this help message", stdout);
+  }
 };
 
 
