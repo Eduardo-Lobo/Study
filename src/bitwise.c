@@ -6,7 +6,7 @@
 #include <stdio.h>
 #include <getopt.h>
 
-static struct option const long_option[]=
+const struct option long_option[]=
 {
   {"toupper", required_argument, NULL, 'u'},
   {"tolower", required_argument, NULL, 'l'},
