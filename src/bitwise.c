@@ -11,6 +11,8 @@ const struct option long_option[]=
 {
   {"toupper", required_argument, NULL, 'u'},
   {"tolower", required_argument, NULL, 'l'},
+  {"help",    no_argument,       NULL, 'h'},
+  {0,         0,                 0,      0},
 };
 
 
