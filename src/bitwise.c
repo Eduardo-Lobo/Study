@@ -38,7 +38,7 @@ usage(int status){
 
 
 void
-toupper(char word){
+toupper_f(char word){
 
   unsigned char c = word[0];
   uint16_t mask = 0x00100000;

@@ -17,7 +17,7 @@ main(int argc, char **argv){
         switch (expression)
         {
         case 'u':
-            toupper();
+            toupper_f();
             break;
         case 'l':
             break
