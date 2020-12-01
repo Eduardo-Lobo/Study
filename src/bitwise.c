@@ -11,17 +11,17 @@ usage(int status){
   if (status){
     fputs(
       "Usage:\n\
-      bitwise [ --l ] [ word ]\n\
-      bitwise [ --u ] [ word ]\n", stdout);
+      bitwise [ --L ] [ word ]\n\
+      bitwise [ --U ] [ word ]\n", stdout);
   }else{
     fputs(
       "Usage:\n\
-      bitwise [ --l ] [ word ]\n\
-      bitwise [ --u ] [ word ]\n", stdout);
+      bitwise [ --L ] [ word ]\n\
+      bitwise [ --U ] [ word ]\n", stdout);
     fputs(
       "Options:\n\
-      -l, --tolower     Invert [word] for uppercase\n\
-      -u, --toupper     Invert [word] for lowercase\n\
+      -L, --tolower     Invert [word] for uppercase\n\
+      -U, --toupper     Invert [word] for lowercase\n\
       -h, --help        Show this help message\n", stdout);
   }
 };
