@@ -12,18 +12,23 @@ usage(int status){
     fputs(
       "Usage:\n\
       bitwise [ --L ] [ word ]\n\
+      bitwise [ --l ] [ word ]\n\
       bitwise [ --U ] [ word ]\n\
-      bitwise [ --u ] [ word ]\n", stdout);
+      bitwise [ --u ] [ word ]\n\
+      bitwise [ --h ]\n", stdout);
   }else{
     fputs(
       "Usage:\n\
       bitwise [ --L ] [ word ]\n\
+      bitwise [ --l ] [ word ]\n\
       bitwise [ --U ] [ word ]\n\
-      bitwise [ --u ] [ word ]\n\n", stdout);
+      bitwise [ --u ] [ word ]\n\
+      bitwise [ --h ]\n", stdout);
     fputs(
       "Options:\n\
-      -L, --tolower     Invert [word] for uppercase\n\
-      -U, --toupper     Invert [word] for lowercase\n\
+      -L, --tolower     Invert [word] for lowercase\n\
+      -l, --lower       Invert first char for lowercase\n\
+      -U, --toupper     Invert [word] for uppercase\n\
       -u, --upper       Invert first char for uppercase\n\
       -h, --help        Show this help message\n", stdout);
   }
