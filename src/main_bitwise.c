@@ -23,19 +23,23 @@ main(int argc, char **argv){
     int c, *longindex = 0;
     const char *optstring = "U:L:u:h";
 
-    while ((c = getopt_long(argc, argv, optstring, longopts, &optind)) != -1){
-        switch (c)
-        {
-        case 'U':
-            printf("%s\n", toupper_f(argv[2]));
-            break;
-        case 'u':
-            printf("%s\n", upper_f(argv[2]));
-            break;
-        case 'L':
-            break;
-        case 'h':
-            usage(EXIT_SUCCESS);
+    if (argc < 3){
+        usage(EXIT_FAILURE);
+    }else{
+        while ((c = getopt_long(argc, argv, optstring, longopts, &optind)) != -1){
+            switch (c)
+            {
+            case 'U':
+                printf("%s\n", toupper_f(argv[2]));
+                break;
+            case 'u':
+                printf("%s\n", upper_f(argv[2]));
+                break;
+            case 'L':
+                break;
+            case 'h':
+                usage(EXIT_SUCCESS);
+            }
         }
     }
 };
