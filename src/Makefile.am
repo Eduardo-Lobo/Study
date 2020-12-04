@@ -5,4 +5,5 @@ AM_LDFLAGS = $(IGNORE_UNUSED_LIBRARIES_CFLAGS)
 bin_PROGRAMS = bitwise
 bitwise_SOURCES = main_bitwise.c \
     bitwise.c      \
-noinst_HEADERS = bitwise.h
+    date.c         \
+noinst_HEADERS = bitwise.h date.h
