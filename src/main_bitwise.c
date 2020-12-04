@@ -2,11 +2,16 @@
  *
  * 
  */
+/*                 */
+#include <getopt.h>
 #include <stdlib.h>
 #include <stdio.h>
-#include <getopt.h>
+/*                 */
 #include "bitwise.h"
+#include "cntbits.h"
+#include "usage.h"
 #include "date.h"
+
 
 const struct option longopts[]=
 {
@@ -18,6 +23,7 @@ const struct option longopts[]=
   {"extract_month", no_argument, NULL, 'm'},
   {"extract_day", no_argument,   NULL, 'd'},
   {"extract_year", no_argument,  NULL, 'y'},
+  {"count",      no_argument,    NULL, 'c'},
   {"help",    no_argument,       NULL, 'h'},
   {0,         0,                 0,      0},
 };
@@ -26,8 +32,9 @@ const struct option longopts[]=
 int
 main(int argc, char **argv){
 
-    const char *optstring = "L:l:U:u:Ddmyh";
+    const char *optstring = "L:l:U:u:Ddmcyh";
     int month, day, year, c, *longindex = 0;
+    unsigned int number;
 
     if (argc < 2){
         usage(EXIT_FAILURE);
@@ -48,29 +55,34 @@ main(int argc, char **argv){
                 printf("%s\n", lower_f(argv[2]));
                 break;
             case 'D':
-                enter_dt();
+                enter(c);
                 if ((scanf("%d %d %d", &month, &day, &year)));
                     todate_f(c, month, day, year);
                 break;
             case 'e':
-                enter_dt();
+                enter(c);
                 if ((scanf("%d %d %d", &month, &day, &year)));
                     todate_f(c, month, day, year);
                 break;
             case 'm':
-                enter_dt();
+                enter(c);
                 if ((scanf("%d %d %d", &month, &day, &year)));
                     todate_f(c, month, day, year);
                 break;
             case 'd':
-                enter_dt();
+                enter(c);
                 if ((scanf("%d %d %d", &month, &day, &year)));
                     todate_f(c, month, day, year);
                 break;
             case 'y':
-                enter_dt();
+                enter(c);
                 if ((scanf("%d %d %d", &month, &day, &year)));
                     todate_f(c, month, day, year);
+                break;
+            case 'c':
+                enter(c);
+                if((scanf("%d", &number)));
+                    cnt_bits(number);
                 break;
             case 'h':
                 usage(EXIT_SUCCESS);
