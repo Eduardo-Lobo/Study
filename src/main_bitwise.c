@@ -6,6 +6,7 @@
 #include <stdio.h>
 #include <getopt.h>
 #include "bitwise.h"
+#include "date.h"
 
 const struct option longopts[]=
 {
@@ -13,6 +14,7 @@ const struct option longopts[]=
   {"lower",   required_argument, NULL, 'l'},
   {"toupper", required_argument, NULL, 'U'},
   {"upper",   required_argument, NULL, 'u'},
+  {"date",    no_argument,       NULL, 'd'},
   {"help",    no_argument,       NULL, 'h'},
   {0,         0,                 0,      0},
 };
@@ -21,8 +23,8 @@ const struct option longopts[]=
 int
 main(int argc, char **argv){
 
-    int c, *longindex = 0;
-    const char *optstring = "L:l:U:u:h";
+    const char *optstring = "L:l:U:u:dh";
+    int month, day, year, c, *longindex = 0;
 
     if (argc < 2){
         usage(EXIT_FAILURE);
@@ -41,6 +43,11 @@ main(int argc, char **argv){
                 break;
             case 'l':
                 printf("%s\n", lower_f(argv[2]));
+                break;
+            case 'd':
+                    enter_dt();
+                if ((scanf("%d %d %d", &month, &day, &year)));
+                    todate_f(month, day, year);
                 break;
             case 'h':
                 usage(EXIT_SUCCESS);
