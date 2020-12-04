@@ -3,18 +3,12 @@
  * 
  * 
  */
-#include <stdio.h>
+/*                */
 #include <stdlib.h>
-#include "date.h" 
+#include <stdio.h>
+/*                */
 #include "bitwise.h"
-
-void
-enter_dt(void){
-    
-    printf("bitwise 0.1:\n\
-        Enter with a date range of [m 1..12] [d 1..31 ] [y 0..99]\n\
-        Example: 12 31 1999 or Ctrl + c to exit\n");
-};
+#include "date.h" 
 
 
 int
