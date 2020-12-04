@@ -15,6 +15,7 @@ usage(int status){
       bitwise [ --l ] [ word ]\n\
       bitwise [ --U ] [ word ]\n\
       bitwise [ --u ] [ word ]\n\
+      bitwise [ --d ] [m 1..12] [d 1..31] [y 0..99]\n\
       bitwise [ --h ]\n", stdout);
   }else{
     fputs(
@@ -23,6 +24,7 @@ usage(int status){
       bitwise [ --l ] [ word ]\n\
       bitwise [ --U ] [ word ]\n\
       bitwise [ --u ] [ word ]\n\
+      bitwise [ --d ] [m 1..12] [d 1..31] [y 0..99]\n\
       bitwise [ --h ]\n", stdout);
     fputs(
       "Options:\n\
@@ -30,6 +32,7 @@ usage(int status){
       -l, --lower       Invert first char for lowercase\n\
       -U, --toupper     Invert [word] for uppercase\n\
       -u, --upper       Invert first char for uppercase\n\
+      -d, --date        Show the date in formart 16 bits\n\
       -h, --help        Show this help message\n", stdout);
   }
 };
@@ -43,7 +46,7 @@ char
     if (word[0] = word[0] | x){
         return word;
     }
-}
+};
 
 
 char 
@@ -55,7 +58,7 @@ char
         word[i] = word[i] | x;
     }
     return word;
-}
+};
 
 
 char 
@@ -79,18 +82,3 @@ char
     }
     return word;
 };
-
-// Example:
-// w 01110111 o 01101111 r 01110010 d 01100100
-//   11011111   11011111   11011111   11011111
-//   ----------------------------------------- AND
-//   01010111   01001111   01010010   01000100
-
-// 32 00100000 
-//    -------- ~ NOT
-//    11011111
-
-// W 01010111 O 01001111 R 01010010 D 01000100
-//   00100000   00100000   00100000   00100000
-//   ----------------------------------------- OR
-//   01110111   01101111   01110010   01100100
