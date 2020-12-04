@@ -15,6 +15,7 @@ const struct option longopts[]=
   {"toupper", required_argument, NULL, 'U'},
   {"upper",   required_argument, NULL, 'u'},
   {"date",    no_argument,       NULL, 'd'},
+  {"extract_month", no_argument, NULL, 'e'},
   {"help",    no_argument,       NULL, 'h'},
   {0,         0,                 0,      0},
 };
@@ -23,7 +24,7 @@ const struct option longopts[]=
 int
 main(int argc, char **argv){
 
-    const char *optstring = "L:l:U:u:dh";
+    const char *optstring = "L:l:U:u:deh";
     int month, day, year, c, *longindex = 0;
 
     if (argc < 2){
@@ -45,12 +46,18 @@ main(int argc, char **argv){
                 printf("%s\n", lower_f(argv[2]));
                 break;
             case 'd':
-                    enter_dt();
+                enter_dt();
                 if ((scanf("%d %d %d", &month, &day, &year)));
-                    todate_f(month, day, year);
+                    todate_f(c, month, day, year);
+                break;
+            case 'e':
+                enter_dt();
+                if ((scanf("%d %d %d", &month, &day, &year)));
+                    todate_f(c, month, day, year);
                 break;
             case 'h':
                 usage(EXIT_SUCCESS);
+                break;
             }
         }
     }

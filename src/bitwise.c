@@ -16,6 +16,7 @@ usage(int status){
       bitwise [ --U ] [ word ]\n\
       bitwise [ --u ] [ word ]\n\
       bitwise [ --d ] [m 1..12] [d 1..31] [y 0..99]\n\
+      bitwise [ --e ] [m 1..12] [d 1..31] [y 0..99]\n\
       bitwise [ --h ]\n", stdout);
   }else{
     fputs(
@@ -25,15 +26,17 @@ usage(int status){
       bitwise [ --U ] [ word ]\n\
       bitwise [ --u ] [ word ]\n\
       bitwise [ --d ] [m 1..12] [d 1..31] [y 0..99]\n\
+      bitwise [ --e ] [m 1..12] [d 1..31] [y 0..99]\n\
       bitwise [ --h ]\n", stdout);
     fputs(
       "Options:\n\
-      -L, --tolower     Invert [word] for lowercase\n\
-      -l, --lower       Invert first char for lowercase\n\
-      -U, --toupper     Invert [word] for uppercase\n\
-      -u, --upper       Invert first char for uppercase\n\
-      -d, --date        Show the date in formart 16 bits\n\
-      -h, --help        Show this help message\n", stdout);
+      -L, --tolower       Invert [word] for lowercase\n\
+      -l, --lower         Invert first char for lowercase\n\
+      -U, --toupper       Invert [word] for uppercase\n\
+      -u, --upper         Invert first char for uppercase\n\
+      -d, --date          Show the date in formart 16 bits\n\
+      -u, --extract_month Extract the month\n\
+      -h, --help          Show this help message\n", stdout);
   }
 };
 
