@@ -52,7 +52,7 @@ usage(int status){
 
 
 void
-enter_dt(int opt){
+enter(int opt){
     
     if (opt == 'c')
         fputs("bitwise 0.1:\n\
