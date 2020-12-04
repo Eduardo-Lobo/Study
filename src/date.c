@@ -16,18 +16,29 @@ enter_dt(void){
         Example: 12 31 1999 or Ctrl + c to exit\n");
 };
 
-int 
-todate_f(int month, int day, int year){
 
-    struct Date d;
+int
+todate_f(int opt, int month, int day, int year){
+
+    struct Date d = {.month=month, .day=day, .year=year};
     const int x = 0;
     
     if (month < 1 || month > 12 || day < 1 || day > 31 || year < 00 || year > 99){
         usage(EXIT_FAILURE);
     }
-    else
+    else if (opt == 'd')
     {
         printf("Date: %d/%d/%d Byte: %zu\n", 
-        d.month=month, d.day=day, d.year=year, sizeof d);
+        d.month, d.day, d.year, sizeof d);
     }
+    else if (opt == 'e'){
+        extract_month(d.month);
+    }
+};
+
+
+void
+extract_month(int month){
+    
+    printf("extract_month: %d\n", month);
 };
