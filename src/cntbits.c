@@ -14,20 +14,20 @@
 int
 cnt_bits(unsigned int number)
 {
-    unsigned int cnt=0, backup=number;;
+    unsigned int c=0;
 
     while (number)
     {
-        cnt++;
+        c++;
         number >>= 1;
     }
-    if (cnt > 16 || cnt < 16)
+    if (c > 16 || c < 16)
     {
-        printf(biterr, backup);
+        return 1;
     }
     else
     {
-        printf(bitscc, cnt);
+        return 0;
     }
 };
 
