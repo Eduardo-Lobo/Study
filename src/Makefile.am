@@ -6,6 +6,6 @@ bin_PROGRAMS = bitwise
 bitwise_SOURCES = main_bitwise.c \
     bitwise.c      \
     date.c         \
-    cntbits.c      \
+    bits.c         \
     usage.c        \
-noinst_HEADERS = bitwise.h date.h cntbits.h usage.h
+noinst_HEADERS = bitwise.h date.h bits.h usage.h

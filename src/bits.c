@@ -8,7 +8,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 /*                */
-#include "cntbits.h"
+#include "bits.h"
 
 
 unsigned int
