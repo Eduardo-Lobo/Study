@@ -11,7 +11,7 @@
 #include "cntbits.h"
 
 
-int
+unsigned int
 cnt_bits(unsigned int number)
 {
     unsigned int c=0;
@@ -35,7 +35,6 @@ cnt_bits(unsigned int number)
 unsigned int 
 test_bit(unsigned int n, unsigned int p)
 {
-
     unsigned int x[16], y[16], i=0, in=0;
 
     if (!(cnt_bits(n)) && !(check(p)))
@@ -65,6 +64,7 @@ test_bit(unsigned int n, unsigned int p)
     }else
         return false;
 };
+
 
 unsigned int
 check(unsigned int n){

@@ -7,7 +7,7 @@
 /* 
 Counts the number of one bits in a 16-bit integer value.
 */
-extern int cnt_bits(unsigned int number);
+extern unsigned int cnt_bits(unsigned int number);
 /* 
 Check if n have a range 0..15.
 The function should always return 1 if n holds a 
