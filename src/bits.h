@@ -25,6 +25,11 @@ contains a 1, the function should return <b>false</b> if that
 bit position contains a 0.
 */
 extern unsigned int test_bit(unsigned int n, unsigned int p);
+/* 
+Take a integer 16-bit and convert to binary.
+Return a array.
+*/
+extern unsigned int *tobin(unsigned int n);
 
 #define biterr "N %d is not 16 bits\n"
 #define bitscc "N of bits: %d\n"
