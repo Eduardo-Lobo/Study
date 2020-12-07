@@ -35,24 +35,12 @@ cnt_bits(unsigned int number)
 unsigned int 
 test_bit(unsigned int n, unsigned int p)
 {
-    unsigned int x[16], y[16], i=0, in=0;
+    unsigned int *y;
 
     if (!(cnt_bits(n)) && !(check(p)))
     {
-        do
-        {
-            x[i] = n % 2;
-            n = n / 2;
-            i++;
-
-        } while (n > 0);
-
-        for (i = i-1; i > 0; i--)
-        {
-            y[in] = x[i];
-            in++;
-        }
-
+        y = tobin(n);
+        
         if (y[p] == 1)
         {
             return true;
@@ -67,8 +55,8 @@ test_bit(unsigned int n, unsigned int p)
 
 
 unsigned int
-check(unsigned int n){
-
+check(unsigned int n)
+{
     if (n < 0 || n > 15)
     {
         return 1;
@@ -77,4 +65,27 @@ check(unsigned int n){
     {
         return 0;
     }
+};
+
+
+unsigned int
+*tobin(unsigned int n)
+{
+    unsigned int x[16], i=0, in=0;
+    static unsigned int y[16];
+
+    do
+    {
+        x[i] = n % 2;
+        n = n / 2;
+        i++;
+
+    } while (n > 0);
+
+    for (i = i-1; i > 0; i--)
+    {
+        y[in] = x[i];
+        in++;
+    }
+    return y;
 };
