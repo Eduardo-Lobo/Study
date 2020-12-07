@@ -24,6 +24,7 @@ const struct option longopts[]=
   {"extract_day", no_argument,   NULL, 'd'},
   {"extract_year", no_argument,  NULL, 'y'},
   {"count",      no_argument,    NULL, 'c'},
+  {"test",       no_argument,    NULL, 't'},
   {"help",    no_argument,       NULL, 'h'},
   {0,         0,                 0,      0},
 };
@@ -32,9 +33,9 @@ const struct option longopts[]=
 int
 main(int argc, char **argv){
 
-    const char *optstring = "L:l:U:u:Ddmcyh";
+    const char *optstring = "L:l:U:u:Ddmcyth";
     int month, day, year, c, *longindex = 0;
-    unsigned int number;
+    unsigned int number, n, p;
 
     if (argc < 2){
         usage(EXIT_FAILURE);
@@ -66,23 +67,27 @@ main(int argc, char **argv){
                 break;
             case 'm':
                 enter(c);
-                if ((scanf("%d %d %d", &month, &day, &year)));
+                if ((scanf("%d %d %d", &month, &day, &year)))
                     todate_f(c, month, day, year);
                 break;
             case 'd':
                 enter(c);
-                if ((scanf("%d %d %d", &month, &day, &year)));
+                if ((scanf("%d %d %d", &month, &day, &year)))
                     todate_f(c, month, day, year);
                 break;
             case 'y':
                 enter(c);
-                if ((scanf("%d %d %d", &month, &day, &year)));
+                if ((scanf("%d %d %d", &month, &day, &year)))
                     todate_f(c, month, day, year);
                 break;
             case 'c':
                 enter(c);
-                if((scanf("%d", &number)));
+                if((scanf("%d", &number)))
                     cnt_bits(number);
+                break;
+            case 't':
+                if ((scanf("%d %d", &n, &p)))
+                    test_bit(n, p);
                 break;
             case 'h':
                 usage(EXIT_SUCCESS);
