@@ -3,12 +3,8 @@
  * 
  * 
  */ 
-extern int todate_f(int opt, int month, int day, int year);
-extern void extract_month(int month);
-extern void extract_day(int day);
-extern void extract_year(int year);
-struct Date
-{
-    unsigned int month : 4, day : 5, year : 7;
 
-};
+extern unsigned int *todate_f(int m, int d, int y);
+extern unsigned int *extract_month(int m, int d, int y);
+extern unsigned int *extract_day(int m, int d, int y);
+extern unsigned int *extract_year(int m, int d, int y);
