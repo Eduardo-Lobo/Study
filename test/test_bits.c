@@ -1,15 +1,12 @@
+/*
+ * Create test to bits.c 
+ */
+
+/*                */
 #include <stdio.h>
+/*                */
 #include "test.h"
 #include "bits.h"
-
-#define one  "Number: %d\n is not a value 16-bit"
-#define zero "Number: %d\n is a value 16-bit"
-
-#define false "Number: %d in position %d have bit 0"
-#define true  "Number: %d in position %d have bit 1"
-
-#define range_t "Number: %d is within range 0..15"
-#define range_f "Number: %d is outside range 0..15"
 
 
 void 
@@ -19,10 +16,10 @@ test_cnt_bits(void)
     
     if (!(cnt_bits(x0)))
     {
-        printf(one, x0);
+        printf(is_16bit, x0);
     }else if (cnt_bits(x1))
     {
-        printf(zero, x1);
+        printf(is_n16bit, x1);
     }
 };
 
@@ -34,10 +31,10 @@ test_test_bit(void)
 
     if ((test_bit(n, p0)))
     {
-        printf(true, n, p0);
+        printf(is_one, n, p0);
     }else if (!(test_bit(x, p1)))
     {
-        printf(false, n, p1);
+        printf(is_zero, n, p1);
     }
 };
 
@@ -49,9 +46,9 @@ test_check(void)
 
     if (!(check(n0)))
     {
-        printf(range_t, n0);
+        printf(is_range, n0);
     }else if (check(n1))
     {
-        printf(range_f, n1);
+        printf(is_nrange, n1);
     }
 };
