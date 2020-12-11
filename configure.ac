@@ -3,7 +3,7 @@
 
 AC_INIT([bitwise], [0.1])
 AC_CONFIG_AUX_DIR([build-aux])
-AC_CONFIG_SRCDIR([src/main_bitwise.c])
+AC_CONFIG_SRCDIR([src/main.c])
 AM_INIT_AUTOMAKE
 
 dnl Checks for programs.
