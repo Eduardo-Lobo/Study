@@ -37,7 +37,7 @@ test_bit(unsigned int n, unsigned int p)
 {
     unsigned int *y;
 
-    if (!(cnt_bits(n)) && !(check(p)))
+    if (!(cnt_bits(n)) && !(range(p)))
     {
         y = tobin(n);
         
@@ -55,7 +55,7 @@ test_bit(unsigned int n, unsigned int p)
 
 
 unsigned int
-check(unsigned int n)
+range(unsigned int n)
 {
     if (n < 0 || n > 15)
     {

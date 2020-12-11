@@ -13,7 +13,7 @@ Check if n have a range 0..15.
 The function should always return 1 if n holds a 
 value outside the range 0..15, otherwise 0. 
 */
-extern unsigned int check(unsigned int n);
+extern unsigned int range(unsigned int n);
 /* 
 This function requires two 16-bit integer parameters. 
 The first parameter is a 16-bit value to test; 
