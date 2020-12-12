@@ -57,3 +57,25 @@ char
     }
     return str;
 };
+
+
+void
+test_main_bitwise(void){
+
+    char l[]="LOWERCASE", u[]="uppercase";
+
+    fputs("-------BEGINNING TEST TO BITWISE------\n\
+        \n-------<b>TEST TO LOWER_F</b>-------\n", stdout);
+    printf(lower, test_lower_f(l));
+
+    fputs("\n-------<b>TEST TO TOLOWER_F</b>-------\n", stdout);
+    printf(tolower, test_tolower_f(l));
+
+    fputs("\n-------<b>TEST TO UPPER_F</b>-------\n", stdout);
+    printf(upper, test_upper_f(u));
+
+    fputs("\n-------<b>TEST TO TOUPPER_F</b>-------\n", stdout);
+    printf(toupper, test_toupper_f(u));
+
+    fputs("\n-------END TEST BITWISE-------\n", stdout);
+};
