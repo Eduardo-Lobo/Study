@@ -15,12 +15,12 @@ unsigned int *test_tobin(unsigned int n);
 void test_main_bits(void);
 
 /*               <b>To test bitwise.c<\b>                                   */ 
-#define lower "Expect that only first character convert to lowercase. Word: %s result %s\n"
-#define tolower "Expect that all characters convert to lowercase. Word: %s result %s\n"
-#define upper "Expect that only first character convert to uppercase. Word: %s result %s\n"
-#define toupper "Expect that all characters convert to uppercase. Word: %s result %s\n"
+#define lower "Expect that only first character convert to lowercase. Word: LOWERCASE result %s\n"
+#define tolower "Expect that all characters convert to lowercase. Word: LOWERCASE result %s\n"
+#define upper "Expect that only first character convert to uppercase. Word: uppercase result %s\n"
+#define toupper "Expect that all characters convert to uppercase. Word: uppercase result %s\n"
 
-void test_lower_f(void);
-void test_tolower_f(void);
-void test_upper_f(void);
-void test_toupper_f(void);
+char *test_lower_f(char str[]);
+char *test_tolower_f(char str[]);
+char *test_upper_f(char str[]);
+char *test_toupper_f(char str[]);
