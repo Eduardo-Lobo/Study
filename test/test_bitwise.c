@@ -6,36 +6,54 @@
 #include <stdio.h>
 #include "test.h"
 /*                */
-#include "bitwise.h"
 
-void
-test_lower_f(void)
+
+char 
+*test_lower_f(char str[])
 {
-    unsigned char *word = BITWISE;
+    const int x = 32;
 
-    printf(lower, word, lower_f(word));
+    if (str[0] = str[0] | x)
+    {
+        return str;
+    }
 };
 
-void
-test_tolower_f(void)
-{
-    unsigned char *word = BITWISE;
 
-    printf(tolower, word, tolower_f(word));
+char 
+*test_tolower_f(char str[])
+{
+    const int x = 32;
+
+    for (int i=0; str[i]!='\0'; i++)
+    {
+        str[i] = str[i] | x;
+    }
+    return str;
+
 };
 
-void 
-test_upper_f(void)
-{
-    unsigned char *word = bitwise;
 
-    printf(upper, word, upper_f(word));
+char 
+*test_upper_f(char str[])
+{
+    const int x = 32;
+
+    if (str[0] = str[0] & ~x)
+    {
+        return str;
+    }
+    
 };
 
-void 
-test_toupper_f(void)
+char
+*test_toupper_f(char str[])
 {
-    unsigned char *word = bitwise;
+    const int x = 32;
 
-    printf(toupper, word, toupper_f(word));
+    for (int i=0; str[i]!='\0'; i++)
+    {
+        str[i] = str[i] & ~x;
+    }
+    return str;
 };
