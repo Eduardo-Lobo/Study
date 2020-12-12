@@ -25,3 +25,6 @@ char *test_tolower_f(char str[]);
 char *test_upper_f(char str[]);
 char *test_toupper_f(char str[]);
 void test_main_bitwise(void);
+
+#define SIZE 16
+#define CBITS 15
