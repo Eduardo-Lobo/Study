@@ -63,23 +63,69 @@ test_range(unsigned int n, unsigned int r)
 unsigned int 
 *test_tobin(unsigned int n)
 {
-    unsigned int x[15], i=0, in=0;
-    static unsigned int y[15];
+    int i=0, c, k;
+    static unsigned int x[16];
 
     if (test_cnt_bits(n)){
         
-        do{
-            x[i] = n % 2;
-            n = n / 2;
+        for (c=15; c >= 0; c--){
+             
+            k = n >> c;
+            x[i] = k & 1;
             i++;
-
-        } while (n > 0);
-
-        for (i = i-1; i > 0; i--){
-            y[in] = x[i];
-            in++;
         }
-        return y;
+        return x;
     }else
         return 0;
+};
+
+
+void 
+test_main_bits(void){
+
+    unsigned int *p, n0=32767, n1=65, p0=6, p1=4, p2=0, r0=15;
+
+    fputs("-------TEST TO CNT_BITS-------\n\n", stdout);
+
+    if (test_cnt_bits(n0)){
+        printf(is_16bit, n0);
+    }
+    if (!(test_cnt_bits(n1))){
+        printf(is_n16bit, n1);
+    }
+
+    fputs("\n-------TEST TO TEST_BIT-------\n\n", stdout);
+
+    if (test_test_bit(n0, p1)){
+        printf(is_one, n0, p1);
+    }
+    if (!(test_test_bit(n0, n1))){
+        printf(larger_or_outside, n0, n1);
+    }
+    if (!(test_test_bit(n0, p2))){
+        printf(is_zero, n0, p2);
+    }
+
+    fputs("\n-------TEST TO RANGE-------\n\n", stdout);
+
+    if (!(test_range(n1, r0))){
+        printf(is_nrange, n1);
+    }
+    if (test_range(p0, r0)){
+        printf(is_range, p0);
+    }
+
+    fputs("\n-------TEST TO TOBIN--------\n\n", stdout);
+
+    if (!(test_tobin(n1))){
+        printf(is_n16bit, n1);
+    }
+    printf(tobin, n0);
+    if (p = test_tobin(n0)){
+
+        for (int i=0; i < 16; i++){
+            printf("%d", p[i]);
+        }
+    }
+    fputs("\n\n-------END-------\n", stdout);
 };
