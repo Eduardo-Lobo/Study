@@ -6,9 +6,9 @@
 #define is_nrange "Number: %d is outside range 0..15"
 #define is_range  "Number: %d is within range 0..15"
 
-void test_cnt_bits(void);
-void test_test_bit(void);
-void test_check(void);
+unsigned int test_cnt_bits(unsigned int n);
+unsigned int test_test_bit(unsigned int n, unsigned int p);
+unsigned int test_range(unsigned int n, unsigned int r);
 
 /*               <b>To test bitwise.c<\b>                                   */ 
 #define lower "Expect that only first character convert to lowercase. \
