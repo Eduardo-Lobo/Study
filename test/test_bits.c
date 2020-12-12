@@ -19,10 +19,10 @@ test_cnt_bits(unsigned int n)
         c++;
         n >>= 1;
     }
-    if (c > 15 || c < 15){
+    if (c > CBITS || c < CBITS){
         return 0;
     }
-    else if (c == 15){
+    else if (c == CBITS){
         return 1;
     }else
         return 0;
@@ -64,7 +64,7 @@ unsigned int
 *test_tobin(unsigned int n)
 {
     int i=0, c, k;
-    static unsigned int x[16];
+    static unsigned int x[SIZE];
 
     if (test_cnt_bits(n)){
         
@@ -85,7 +85,8 @@ test_main_bits(void){
 
     unsigned int *p, n0=32767, n1=65, p0=6, p1=4, p2=0, r0=15;
 
-    fputs("-------TEST TO CNT_BITS-------\n\n", stdout);
+    fputs("-------BEGINNING TEST TO BITS-------\n\
+    \n-------<b>TEST TO CNT_BITS-------</b>\n\n", stdout);
 
     if (test_cnt_bits(n0)){
         printf(is_16bit, n0);
@@ -94,7 +95,7 @@ test_main_bits(void){
         printf(is_n16bit, n1);
     }
 
-    fputs("\n-------TEST TO TEST_BIT-------\n\n", stdout);
+    fputs("\n-------<b>TEST TO TEST_BIT</b>-------\n\n", stdout);
 
     if (test_test_bit(n0, p1)){
         printf(is_one, n0, p1);
@@ -106,7 +107,7 @@ test_main_bits(void){
         printf(is_zero, n0, p2);
     }
 
-    fputs("\n-------TEST TO RANGE-------\n\n", stdout);
+    fputs("\n-------<b>TEST TO RANGE</b>-------\n\n", stdout);
 
     if (!(test_range(n1, r0))){
         printf(is_nrange, n1);
@@ -115,7 +116,7 @@ test_main_bits(void){
         printf(is_range, p0);
     }
 
-    fputs("\n-------TEST TO TOBIN--------\n\n", stdout);
+    fputs("\n-------<b>TEST TO TOBIN</b>--------\n\n", stdout);
 
     if (!(test_tobin(n1))){
         printf(is_n16bit, n1);
@@ -123,9 +124,9 @@ test_main_bits(void){
     printf(tobin, n0);
     if (p = test_tobin(n0)){
 
-        for (int i=0; i < 16; i++){
+        for (int i=0; i < SIZE; i++){
             printf("%d", p[i]);
         }
     }
-    fputs("\n\n-------END-------\n", stdout);
+    fputs("\n\n-------END TEST BITS-------\n", stdout);
 };
