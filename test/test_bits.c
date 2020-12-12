@@ -13,21 +13,18 @@
 unsigned int
 test_cnt_bits(unsigned int n)
 {
-    unsigned int c=0, r=15;
+    unsigned int c=0;
 
-    if (test_range(n, r))
-    {
-        while (n){
-            c++;
-            n >>= 1;
-        }
-        if (c > 15 || c < 15){
-            return 0;
-        }
-        else if (c == 15){
-            return 1;
-        }
-    else
+    while (n){
+        c++;
+        n >>= 1;
+    }
+    if (c > 15 || c < 15){
+        return 0;
+    }
+    else if (c == 15){
+        return 1;
+    }else
         return 0;
 };
 
@@ -63,3 +60,26 @@ test_range(unsigned int n, unsigned int r)
 };
 
 
+unsigned int 
+*test_tobin(unsigned int n)
+{
+    unsigned int x[15], i=0, in=0;
+    static unsigned int y[15];
+
+    if (test_cnt_bits(n)){
+        
+        do{
+            x[i] = n % 2;
+            n = n / 2;
+            i++;
+
+        } while (n > 0);
+
+        for (i = i-1; i > 0; i--){
+            y[in] = x[i];
+            in++;
+        }
+        return y;
+    }else
+        return 0;
+};
