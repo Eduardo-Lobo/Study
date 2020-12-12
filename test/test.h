@@ -9,6 +9,7 @@
 unsigned int test_cnt_bits(unsigned int n);
 unsigned int test_test_bit(unsigned int n, unsigned int p);
 unsigned int test_range(unsigned int n, unsigned int r);
+unsigned int *test_tobin(unsigned int n);
 
 /*               <b>To test bitwise.c<\b>                                   */ 
 #define lower "Expect that only first character convert to lowercase. \
