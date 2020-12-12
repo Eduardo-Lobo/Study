@@ -3,52 +3,63 @@
  */
 
 /*                */
+#include <stdbool.h>
+#include <stdlib.h>
 #include <stdio.h>
 /*                */
 #include "test.h"
-#include "bits.h"
 
 
-void 
-test_cnt_bits(void)
+unsigned int
+test_cnt_bits(unsigned int n)
 {
-    unsigned int x0=32767, x1=89;
-    
-    if (!(cnt_bits(x0)))
+    unsigned int c=0, r=15;
+
+    if (test_range(n, r))
     {
-        printf(is_16bit, x0);
-    }else if (cnt_bits(x1))
-    {
-        printf(is_n16bit, x1);
+        while (n){
+            c++;
+            n >>= 1;
+        }
+        if (c > 15 || c < 15){
+            return 0;
+        }
+        else if (c == 15){
+            return 1;
+        }
+    else
+        return 0;
+};
+
+
+unsigned int 
+test_test_bit(unsigned int n, unsigned int p)
+{
+    unsigned int *y, r=15;
+
+    if ((test_cnt_bits(n)) && (test_range(p, r))){
+        y = test_tobin(n);
+        
+        if (y[p] == 1){
+            return true;
+        }
+        else if (y[p] == 0){
+            return false;
+        }
+    }else
+        return false;
+};
+
+
+unsigned int
+test_range(unsigned int n, unsigned int r)
+{
+    if (n < 0 || n > r){
+        return 0;
+    }
+    else if (n >= 0 || n <= r){
+        return 1;
     }
 };
 
 
-void
-test_test_bit(void)
-{
-    unsigned int n=32767, p0=8, p1=0;
-
-    if ((test_bit(n, p0)))
-    {
-        printf(is_one, n, p0);
-    }else if (!(test_bit(x, p1)))
-    {
-        printf(is_zero, n, p1);
-    }
-};
-
-
-void
-test_check(void)
-{
-    unsigned int n0=15, n1=18;
-
-    if (!(check(n0)))
-    {
-        printf(is_range, n0);
-    }else if (check(n1))
-    {
-        printf(is_nrange, n1);
-    }
-};
