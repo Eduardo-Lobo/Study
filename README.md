@@ -1,6 +1,7 @@
-#Programming Projects#
+## Programming Projects
 
-Book: The Art of assembly language.
+Book: 
+* The Art of assembly language.
 
 1) Write to functions, toupper and tolower, that take a single character as their parameter and
 convert this character to upper case (if it was lowercase) or to lowercase (if it was uppercase) 
@@ -34,3 +35,5 @@ a value outside the range 0..15.
 However, they do not provide rotate right and rotate left operators. Write a pair of functions, ROL and ROR, 
 that perform the rotate tasks. Hint: use the function from exercise five to test the H.O. bit. Then use the 
 corresponding shift operation and the logical OR operation to perform the rotate.
+
+
