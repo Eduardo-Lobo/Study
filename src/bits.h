@@ -31,5 +31,5 @@ Return a array.
 */
 extern unsigned int *tobin(unsigned int n);
 
-#define biterr "N %d is not 16 bits\n"
-#define bitscc "N of bits: %d\n"
+#define CBITS 15
+#define SIZE 16
