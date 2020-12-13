@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 ## Programming Projects
-=======
-##Programming Projects
->>>>>>> 7cf9255132370dd28de327b1716797980ffcb815
 
 Book: 
 * The Art of assembly language.
@@ -40,4 +36,12 @@ However, they do not provide rotate right and rotate left operators. Write a pai
 that perform the rotate tasks. Hint: use the function from exercise five to test the H.O. bit. Then use the 
 corresponding shift operation and the logical OR operation to perform the rotate.
 
+## To clone this repository:
 
+```bash
+# Clone this repository:
+$ git clone https://github.com/Eduardo-Lobo/Study.git
+
+# Go into the repository
+$ cd Study
+```
