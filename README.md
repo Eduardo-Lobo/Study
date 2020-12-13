@@ -1,6 +1,7 @@
-#Programming Projects#
+##Programming Projects
 
-Book: The Art of assembly language.
+Book: 
+* The Art of assembly language.
 
 1) Write to functions, toupper and tolower, that take a single character as their parameter and
 convert this character to upper case (if it was lowercase) or to lowercase (if it was uppercase) 
