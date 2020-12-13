@@ -8,22 +8,22 @@
 Take a single word as their parameter and
 convert this word to uppercase.
 */
-extern char *toupper_f(unsigned char *word );
+extern char *toupper_f(char str[]);
 /* 
 Take a single word as their parameter and
 convert the first character to uppercase
 */
-extern char *upper_f(unsigned char *word);
+extern char *upper_f(char str[]);
 /*
 Take a single word as their parameter and
 convert this word to lowercase.
 */
-extern char *tolower_f(unsigned char *word );
+extern char *tolower_f(char str[]);
 /* 
 Take a single word as their parameter and
 convert the first character to lowercase.
 */
-extern char *lower_f(unsigned char *word);
+extern char *lower_f(char str[]);
 /* 
 
 */

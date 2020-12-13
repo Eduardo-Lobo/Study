@@ -12,52 +12,52 @@
 
 
 char
-*lower_f(unsigned char *word)
+*lower_f(char str[])
 {
     const int x = 32;
 
-    if (word[0] = word[0] | x)
+    if (str[0] = str[0] | x)
     {
-        return word;
+        return str;
     }
 };
 
 
 char 
-*tolower_f(unsigned char *word)
+*tolower_f(char str[])
 {
     const int x = 32;
 
-    for (int i=0; word[i]!='\0'; i++)
+    for (int i=0; str[i]!='\0'; i++)
     {
-        word[i] = word[i] | x;
+        str[i] = str[i] | x;
     }
-    return word;
+    return str;
 };
 
 
 char 
-*upper_f(unsigned char *word)
+*upper_f(char str[])
 {
     const int x = 32;
 
-    if (word[0] = word[0] & ~x)
+    if (str[0] = str[0] & ~x)
     {
-        return word;
+        return str;
     }
 };
 
 
 char
-*toupper_f(unsigned char *word)
+*toupper_f(char str[])
 {
     const int x = 32;
 
-    for (int i=0; word[i]!='\0'; i++)
+    for (int i=0; str[i]!='\0'; i++)
     {
-        word[i] = word[i] & ~x;
+        str[i] = str[i] & ~x;
     }
-    return word;
+    return str;
 };
 
 
