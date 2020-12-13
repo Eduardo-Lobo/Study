@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ## Programming Projects
+=======
+##Programming Projects
+>>>>>>> 7cf9255132370dd28de327b1716797980ffcb815
 
 Book: 
 * The Art of assembly language.
