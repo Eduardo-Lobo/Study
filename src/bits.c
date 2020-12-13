@@ -12,23 +12,19 @@
 
 
 unsigned int
-cnt_bits(unsigned int number)
+cnt_bits(unsigned int n)
 {
     unsigned int c=0;
 
-    while (number)
-    {
+    while (n){
         c++;
-        number >>= 1;
+        n >>= 1;
     }
-    if (c > 16 || c < 16)
-    {
+    if (c == CBITS){
         return 1;
     }
     else
-    {
         return 0;
-    }
 };
 
 
@@ -37,16 +33,14 @@ test_bit(unsigned int n, unsigned int p)
 {
     unsigned int *y;
 
-    if (!(cnt_bits(n)) && !(range(p)))
-    {
+    if ((cnt_bits(n)) && (range(p))){
+        
         y = tobin(n);
         
-        if (y[p] == 1)
-        {
+        if (y[p] == 1){
             return true;
         }
-        else if (y[p] == 0)
-        {
+        else if (y[p] == 0){
             return false;
         }
     }else
@@ -57,35 +51,30 @@ test_bit(unsigned int n, unsigned int p)
 unsigned int
 range(unsigned int n)
 {
-    if (n < 0 || n > 15)
+    if (n >= 0 || n <= 15)
     {
         return 1;
     }
-    else if (n >= 0 || n <= 15)
-    {
+    else
         return 0;
-    }
 };
 
 
 unsigned int
 *tobin(unsigned int n)
 {
-    unsigned int x[16], i=0, in=0;
-    static unsigned int y[16];
+    int i=0, c, k;
+    static unsigned int x[SIZE];
 
-    do
-    {
-        x[i] = n % 2;
-        n = n / 2;
-        i++;
-
-    } while (n > 0);
-
-    for (i = i-1; i > 0; i--)
-    {
-        y[in] = x[i];
-        in++;
-    }
-    return y;
+    if (cnt_bits(n)){
+        
+        for (c=15; c >= 0; c--){
+             
+            k = n >> c;
+            x[i] = k & 1;
+            i++;
+        }
+        return x;
+    }else
+        return 0;
 };
