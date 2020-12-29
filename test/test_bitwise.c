@@ -118,3 +118,16 @@ test_main_bitwise(void){
         test_ret_bitwise("test_toupper_f()", EXIT_FAILURE);
     }
 };
+
+
+void 
+test_ret_bitwise(char* tname, unsigned int ret){
+    
+    if (ret == 0){
+        fputs("============================\n", stdout);
+        ret_scc(tname, ret);
+    }else if (ret == 1){
+        fputs("============================\n", stdout);
+        ret_err(tname, ret);
+    }
+};
