@@ -1,14 +1,15 @@
 #include <stdlib.h>
+#include <stdint.h>
 #include <stdio.h>
 
 /*  Test to src/bits.c     */
 unsigned int test_test_bit(unsigned int n, unsigned int p);
 unsigned int test_range(unsigned int n, unsigned int r);
-unsigned int test_cnt_bits(unsigned int n);
+uint16_t test_cnt_bits(uint16_t n);
 unsigned int *test_tobin(unsigned int n);
 void test_main_bits(void);
 
-enum Bits {SIZE = 16, CBITS = 15};
+enum Bits {SIZE = 16, BIT = 16};
 
 /*  Test to src/bitwise.c  */
 void test_ret_bitwise(char* tname, unsigned int ret);

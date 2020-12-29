@@ -2,30 +2,27 @@
  * Create test to bits.c 
  */
 
-/*                */
 #include <stdbool.h>
 #include <stdlib.h>
+#include <stdint.h>
 #include <stdio.h>
-/*                */
 #include "test.h"
 
-
-unsigned int
-test_cnt_bits(unsigned int n)
+/* Count the bits of n and return 0 if n is 16bit otherwise 1. */
+uint16_t
+test_cnt_bits(uint16_t n)
 {
-    unsigned int c=0;
+    uint8_t c = 0;
 
     while (n){
         c++;
         n >>= 1;
     }
-    if (c > CBITS || c < CBITS){
+
+    if (c == BIT)
         return 0;
-    }
-    else if (c == CBITS){
+    else
         return 1;
-    }else
-        return 0;
 };
 
 
