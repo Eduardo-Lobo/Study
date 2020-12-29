@@ -11,6 +11,7 @@ void test_main_bits(void);
 enum Bits {SIZE = 16, CBITS = 15};
 
 /*  Test to src/bitwise.c  */
+void test_ret_bitwise(char* tname, unsigned int ret);
 unsigned int test_main_bitwise(void);
 char *test_toupper_f(char str[]);
 char *test_tolower_f(char str[]);
