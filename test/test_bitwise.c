@@ -4,6 +4,7 @@
  * Email : myedudev@protonmail.ch
  */
 
+#include <stdbool.h>
 #include <stdio.h>
 #include "test.h"
 
@@ -19,6 +20,7 @@ char
     }
 };
 
+
 /* Change all characters of str for lowercase. */
 char 
 *test_tolower_f(char str[])
@@ -33,6 +35,7 @@ char
 
 };
 
+
 /* Change the first character of str for uppercase. */
 char 
 *test_upper_f(char str[])
@@ -45,6 +48,7 @@ char
     }
     
 };
+
 
 /* Change all characters of str for uppercase. */
 char
@@ -73,9 +77,9 @@ test_main_bitwise(void){
     ret_str = test_lower_f(str);
     
     if (ret_str[0] == (str[0] | x)){
-        test_ret_bitwise("test_lower_f()", EXIT_SUCCESS);
+        t_ret("test_lower_f()", SUCESS, NULL, EXIT_SUCCESS);
     }else{
-        test_ret_bitwise("test_lower_f()", EXIT_FAILURE);
+        t_ret("test_lower_f()", FAILED, NULL, EXIT_FAILURE);
     }
 
     /* Check if all character uppercase at str have change for lowercase. */
@@ -87,9 +91,9 @@ test_main_bitwise(void){
             c++;
     }
     if (c == sizeof(str) -1){
-        test_ret_bitwise("test_tolower_f()", EXIT_SUCCESS);
+        t_ret("test_tolower_f()", SUCESS, NULL, EXIT_SUCCESS);
     }else{ 
-        test_ret_bitwise("test_tolower_f()", EXIT_FAILURE);
+        t_ret("test_tolower_f()", FAILED, NULL, EXIT_FAILURE);
     }
 
     /* If the first character is lowercase at str, change for uppercase.  */
@@ -97,11 +101,10 @@ test_main_bitwise(void){
     ret_str = test_upper_f(str);
 
     if (ret_str[0] == (str[0] & ~x)){
-        test_ret_bitwise("test_upper_f()", EXIT_SUCCESS);
+        t_ret("test_upper_f()", SUCESS, NULL, EXIT_SUCCESS);
     }else{
-        test_ret_bitwise("test_upper_f()", EXIT_FAILURE);
+        t_ret("test_upper_f()", FAILED, NULL, EXIT_FAILURE);
     }
-
 
     /* Check if all character lowercase at str have change for uppercase. */
     /* Character uppercase should continue uppercase. */
@@ -113,21 +116,27 @@ test_main_bitwise(void){
             c++;
     }
     if (c == sizeof(str) - 1){
-        test_ret_bitwise("test_toupper_f()", EXIT_SUCCESS);
+        t_ret("test_toupper_f()", SUCESS, NULL, EXIT_SUCCESS);
     }else{
-        test_ret_bitwise("test_toupper_f()", EXIT_FAILURE);
+        t_ret("test_toupper_f()", FAILED, NULL, EXIT_FAILURE);
     }
 };
 
 
 void 
-test_ret_bitwise(char* tname, unsigned int ret){
+t_ret(char * t_name, char * status, char * p_ret, unsigned int ret){
     
-    if (ret == 0){
-        fputs("============================\n", stdout);
-        ret_scc(tname, ret);
-    }else if (ret == 1){
-        fputs("============================\n", stdout);
-        ret_err(tname, ret);
+    switch (ret)
+    {
+    case 0:
+        putsout;
+        puts_s(t_name, status, p_ret, ret);
+        break;
+    case 1:
+        putsout;
+        puts_e(t_name, status, p_ret, ret);
+        break;
+    default:
+        break;
     }
 };
