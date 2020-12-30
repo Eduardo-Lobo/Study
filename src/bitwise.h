@@ -1,9 +1,10 @@
 /*
- *
- *
- * 
+ * Author: Eduardo-Lobo @2020
+ * Email : myedudev@protonmail.ch
  */
+
 #include <stdint.h>
+
 /*
 Take a single word as their parameter and
 convert this word to uppercase.

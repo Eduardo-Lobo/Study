@@ -1,14 +1,12 @@
 /*
- *
- * 
+ * Author: Eduardo-Lobo @2020
+ * Email : myedudev@protonmail.ch
  */
 
-/*                */
+#include "bitwise.h"
 #include <stdint.h>
 #include <assert.h>
 #include <stdio.h>
-/*                */
-#include "bitwise.h"
 
 
 char
