@@ -3,21 +3,33 @@
 #include <stdio.h>
 
 /*  Test to src/bits.c     */
-unsigned int test_test_bit(unsigned int n, unsigned int p);
-unsigned int test_range(unsigned int n, unsigned int r);
+uint16_t test_bit(uint16_t n, uint16_t p);
 uint16_t test_cnt_bits(uint16_t n);
-unsigned int *test_tobin(unsigned int n);
+uint16_t *test_tobin(uint16_t n);
+uint16_t test_range(uint16_t n);
 void test_main_bits(void);
 
-enum Bits {SIZE = 16, BIT = 16};
+enum Bits {SIZE = 16, BIT = 16, RANGE = 16};
 
 /*  Test to src/bitwise.c  */
-void test_ret_bitwise(char* tname, unsigned int ret);
+void t_ret(char * tname, char * status, char * p_ret, unsigned int ret);
 unsigned int test_main_bitwise(void);
 char *test_toupper_f(char str[]);
 char *test_tolower_f(char str[]);
 char *test_lower_f(char str[]);
 char *test_upper_f(char str[]);
 
-#define ret_err(tname, ret) fprintf(stderr, "%s failed in file %s at line # %d \nreturn %d\n", tname, __FILE__, __LINE__, ret);
-#define ret_scc(tname, ret) fprintf(stdout, "%s was successful in file %s \nreturn %d\n", tname, __FILE__, ret);
+#define puts_e(t_name, status, p_ret, ret) if (p_ret) fprintf(stderr, "Function: %s \nStatus: %s \nFile: %s \nLine: # %d \nReturn: %s\n", \
+t_name, status, __FILE__, __LINE__, p_ret); else fprintf(stdout, "Function: %s \nStatus: %s \nFile: %s \nLine: # %d \nReturn: %d\n", \
+t_name, status, __FILE__, __LINE__, ret);
+
+#define puts_s(t_name, status, p_ret, ret) if (p_ret) fprintf(stdout, "Function: %s \nStatus: %s \nFile: %s \nReturn: %s\n", \
+t_name, status, __FILE__, p_ret); else fprintf(stdout, "Function: %s \nStatus: %s \nFile: %s \nReturn: %d\n", \
+t_name, status, __FILE__, ret);
+
+#define SUCESS "Sucess"
+#define FAILED "Failed"
+#define FALSE "False"
+#define TRUE "True"
+
+#define putsout fputs("============================\n\n", stdout);
